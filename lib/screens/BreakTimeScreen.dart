@@ -9,6 +9,7 @@ class BreakTimeScreen extends StatefulWidget {
   const BreakTimeScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _BreakTimeScreenState createState() => _BreakTimeScreenState();
 }
 
@@ -30,13 +31,14 @@ class _BreakTimeScreenState extends State<BreakTimeScreen> {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
               image: AssetImage("assets/yoga3.jpeg"),
             ),
           ),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
                   "BREAK",
@@ -82,6 +84,7 @@ class TimerModelSec with ChangeNotifier {
 
   int countDown = 20;
 
+  // ignore: non_constant_identifier_names
   MyTimerSec(context) async {
     AudioCache audioCache = AudioCache(prefix: 'assets/');
     audioCache.play('yoga.mp3');

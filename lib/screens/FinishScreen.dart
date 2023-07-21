@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_yoga_app/screens/home.dart';
 
 class FinishScreen extends StatelessWidget {
   const FinishScreen({Key? key}) : super(key: key);
@@ -64,24 +65,28 @@ class FinishScreen extends StatelessWidget {
               const Divider(
                 thickness: 2,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.popUntil(context, ModalRoute.withName('/home'));
-                },
+                 ElevatedButton(
+                  onPressed: () {
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => const Home()),
+                    );
+                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  child: Text(
-                    "Home",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Text(
+                   "Home",
+                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                   ),
                   ),
-                ),
-              ),
+               ),
               const Spacer(),
-              Container(
-                color: Colors.blueGrey,
-                height: 170,
-                width: MediaQuery.of(context).size.width,
+              Expanded( // Add the Expanded widget here
+                child: Container(
+                  color: Colors.blueGrey,
+                  width: MediaQuery.of(context).size.width,
+                ),
               ),
             ],
           ),
